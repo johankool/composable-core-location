@@ -157,6 +157,17 @@ extension LocationManager {
           await task.value.manager.startMonitoring(for: region.rawValue!)
         #endif
       },
+      startMonitoringLocationPushes: { @MainActor in
+        #if os(iOS)
+          if #available(iOS 15.0, *) {
+            try await task.value.manager.startMonitoringLocationPushes()
+          } else {
+            Data()
+          }
+        #else
+          Data()
+        #endif
+      },
       startMonitoringSignificantLocationChanges: { @MainActor in
         #if os(iOS) || targetEnvironment(macCatalyst)
           await task.value.manager.startMonitoringSignificantLocationChanges()
@@ -180,6 +191,13 @@ extension LocationManager {
       stopMonitoringForRegion: { @MainActor region in
         #if os(iOS) || os(macOS) || targetEnvironment(macCatalyst)
           await task.value.manager.stopMonitoring(for: region.rawValue!)
+        #endif
+      },
+      stopMonitoringLocationPushes: { @MainActor in
+        #if os(iOS)
+          if #available(iOS 15.0, *) {
+            await task.value.manager.stopMonitoringLocationPushes()
+          }
         #endif
       },
       stopMonitoringSignificantLocationChanges: { @MainActor in

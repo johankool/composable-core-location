@@ -59,12 +59,14 @@ extension LocationManager {
     significantLocationChangeMonitoringAvailable: XCTUnimplemented(
       "\(Self.self).significantLocationChangeMonitoringAvailable"),
     startMonitoringForRegion: XCTUnimplemented("\(Self.self).startMonitoringForRegion"),
+    startMonitoringLocationPushes: XCTUnimplemented("\(Self.self).startMonitoringLocationPushes"),
     startMonitoringSignificantLocationChanges: XCTUnimplemented(
       "\(Self.self).startMonitoringSignificantLocationChanges"),
     startMonitoringVisits: XCTUnimplemented("\(Self.self).startMonitoringVisits"),
     startUpdatingHeading: XCTUnimplemented("\(Self.self).startUpdatingHeading"),
     startUpdatingLocation: XCTUnimplemented("\(Self.self).startUpdatingLocation"),
     stopMonitoringForRegion: XCTUnimplemented("\(Self.self).stopMonitoringForRegion"),
+    stopMonitoringLocationPushes: XCTUnimplemented("\(Self.self).stopMonitoringLocationPushes"),
     stopMonitoringSignificantLocationChanges: XCTUnimplemented(
       "\(Self.self).stopMonitoringSignificantLocationChanges"),
     stopMonitoringVisits: XCTUnimplemented("\(Self.self).stopMonitoringVisits"),

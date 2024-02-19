@@ -288,6 +288,8 @@ public struct LocationManager: Sendable {
     
     public var startMonitoringForRegion: @Sendable (Region) async -> Void
     
+    public var startMonitoringLocationPushes: @Sendable () async throws -> Data
+
     public var startMonitoringSignificantLocationChanges: @Sendable () async -> Void
     
     public var startMonitoringVisits: @Sendable () async -> Void
@@ -298,6 +300,8 @@ public struct LocationManager: Sendable {
     
     public var stopMonitoringForRegion: @Sendable (Region) async -> Void
     
+    public var stopMonitoringLocationPushes: @Sendable () async -> Void
+
     public var stopMonitoringSignificantLocationChanges: @Sendable () async -> Void
     
     public var stopMonitoringVisits: @Sendable () async -> Void
